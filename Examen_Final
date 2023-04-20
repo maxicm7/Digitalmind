@@ -1,0 +1,64 @@
+
+import random
+
+opciones_compu=["Piedra", "Papel", "Tijera"]
+
+juego_compu=random.choice(opciones_compu)
+
+elige_jugador=input("Elija Piedra, Papel o Tijera   ")
+
+if elige_jugador == juego_compu:
+    print("Empataste")
+elif elige_jugador=="Piedra" and juego_compu=="Papel":
+    print("Perdiste", "la computador eligió Papel")
+elif elige_jugador=="Papel" and juego_compu=="Piedra":
+    print("Ganaste")
+elif elige_jugador=="Papel" and juego_compu=="Tijera":
+    print("Perdiste", "la computadora elijgió Tijera")
+elif elige_jugador=="Tijera" and juego_compu=="Papel":
+    print("Ganaste")
+elif elige_jugador=="Tijera" and juego_compu=="Piedra":
+    print("Perdiste", "la computadora eligió Piedra")
+elif elige_jugador=="Piedra" and juego_compu=="Tijera":
+    print("Ganaste")
+else:
+    print("no está en las opciones")
+
+#Adivinar un número contra la computadora
+
+import random
+
+numero_jugador=int(input("Elige un número del 1 al 20: "))
+numero_compu=random.randint(1,20)
+
+if numero_jugador == numero_compu:
+    print("Adivinaste", "elegiste", numero_jugador, "y la computadora eligió", numero_compu)
+else:
+    print("No Adivinaste", "elegiste", numero_jugador, "y la computadora eligió", numero_compu)
+
+
+#Tirar un dado
+
+import random
+
+dado=random.randint(1,6)
+
+juego=input("Tire el dado presionando enter")
+
+print("El valor del dado es", dado)
+
+#Graficar una función matemática 
+# Graficaremos una función financiera del rendimiento de un activo
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+r=float(input("ingrese una tasa de interes mensual "))
+T=int(input("Ingrese los meses que va a rendir el dinero"))
+b=np.empty(T+1)
+b[0]=int(input("Ingrese el monto a invertir redondeado a un entero"))
+for t in range(T):
+     b[t+1]=(1+r)*b[t]
+plt.plot(b, label='Curva de rendimiento')
+plt.legend()
+plt.show()
